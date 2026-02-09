@@ -15,7 +15,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCtw0VBeAGCi9Png2b9o2qztd-0geGrxDE",
+  apiKey: "",
   authDomain: "fir-project-4db1f.firebaseapp.com",
   databaseURL: "https://fir-project-4db1f.firebaseio.com",
   projectId: "fir-project-4db1f",
