@@ -20,5 +20,8 @@
     left: 0;
     top: 0;
     width: 100%;
+    transform: none !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }

@@ -2,9 +2,9 @@ export default function ProTemplate({ data }) {
   const { personal, education, experience, skills } = data;
 
   return (
-    <div className="bg-white max-w-[800px] mx-auto shadow-lg flex min-h-[600px]">
+    <div className="bg-white max-w-[800px] mx-auto shadow-lg flex min-h-[600px]" style={{ overflowWrap: "anywhere", wordBreak: "break-word" }}>
       {/* Left Sidebar */}
-      <div className="w-1/3 bg-gray-900 text-white p-6">
+      <div className="w-1/3 bg-gray-900 text-white p-6 min-w-0">
         {/* Avatar placeholder */}
         <div className="w-24 h-24 rounded-full bg-purple-500 mx-auto flex items-center justify-center text-3xl font-bold mb-4">
           {(personal.fullName || "?")
@@ -45,7 +45,7 @@ export default function ProTemplate({ data }) {
                   <div className="w-full bg-gray-700 rounded-full h-1.5 mt-1">
                     <div
                       className="bg-purple-500 h-1.5 rounded-full"
-                      style={{ width: `${75 + Math.random() * 25}%` }}
+                      style={{ width: `${75 + ((i * 17) % 25)}%` }}
                     />
                   </div>
                 </div>
@@ -74,14 +74,14 @@ export default function ProTemplate({ data }) {
       </div>
 
       {/* Right Content */}
-      <div className="w-2/3 p-6">
+      <div className="w-2/3 p-6 min-w-0">
         {/* Summary */}
         {personal.summary && (
           <div className="mb-6">
             <h2 className="text-sm font-bold uppercase tracking-widest text-purple-600 mb-2">
               About Me
             </h2>
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-wrap">
               {personal.summary}
             </p>
           </div>
@@ -100,9 +100,9 @@ export default function ProTemplate({ data }) {
                 <div key={i} className="relative pl-6 mb-6">
                   {/* Timeline dot */}
                   <div className="absolute left-0 top-1.5 w-[11px] h-[11px] rounded-full bg-purple-500 border-2 border-white" />
-                  <div className="flex justify-between items-baseline">
-                    <h3 className="font-semibold text-gray-900">{exp.title}</h3>
-                    <span className="text-xs text-gray-400 shrink-0 ml-2">
+                  <div className="flex justify-between items-baseline gap-2">
+                    <h3 className="font-semibold text-gray-900 min-w-0">{exp.title}</h3>
+                    <span className="text-xs text-gray-400 shrink-0">
                       {exp.duration}
                     </span>
                   </div>
@@ -110,7 +110,7 @@ export default function ProTemplate({ data }) {
                     {exp.company}
                   </p>
                   {exp.description && (
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-600 mt-1 whitespace-pre-wrap">
                       {exp.description}
                     </p>
                   )}
